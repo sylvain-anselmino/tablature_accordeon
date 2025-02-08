@@ -20,6 +20,7 @@ let selected = ref(false);
   height: 60px;
   text-align: center;
   cursor: pointer;
+  padding: 20px 10px;
 }
 .red{
   background-color: brown;
