@@ -1,7 +1,11 @@
 <script setup>
+import { ref } from "vue";
+let selected = ref(false);
 </script>
 <template>
-  <div class="item">
+  <div class="item" 
+  :class="{red : selected}"
+  @click="selected = ! selected; $event.reset = !selected">
     <i>
       <slot></slot>
     </i>
@@ -16,5 +20,8 @@
   height: 60px;
   text-align: center;
   cursor: pointer;
+}
+.red{
+  background-color: brown;
 }
 </style>

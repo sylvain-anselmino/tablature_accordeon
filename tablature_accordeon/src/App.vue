@@ -10,7 +10,6 @@ let currentNotes = ref([]);
   <header></header>
 
   <main>
-    <div style="padding-left: 435px;"><button @click="currentNotes = []" style="width: 150px; height: 60px; background-color: lightgray; border-radius: 10px;cursor: pointer;" >Effacer</button></div>
     <div class="container">
       <Clavier :current-notes="currentNotes" />
       <div class="separatorV"></div>

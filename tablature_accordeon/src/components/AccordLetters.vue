@@ -1,26 +1,35 @@
 <script setup>
 import AccordItem from "./AccordItem.vue";
+const emit = defineEmits(['select-accord']);
+
+function sendNotes(args){
+  emit('select-accord', args)
+}
 </script>
 
 <template>
   <div class="container">
-      <AccordItem @click="$emit('select-accord', ['Do', 'Mi', 'Sol'])">C</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Do', 'Mib', 'Sol'])">Cm</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Ré', 'Fa#', 'La'])">D</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Ré', 'Fa', 'La'])">Dm</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Mi', 'Sol#', 'Si'])">E</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Mi', 'Sol', 'Si'])">Em</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Fa', 'La', 'Do'])">F</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Fa', 'Sol#', 'Do'])">Fm</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Sol', 'Si', 'Ré'])">G</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Sol', 'Sib', 'Ré'])">Gm</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['La', 'Do#', 'Mi'])">A</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['La', 'Do', 'Mi'])">Am</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Si', 'Ré#', 'Fa#'])">B</AccordItem>
-      <AccordItem @click="$emit('select-accord', ['Si', 'Ré', 'Fa#'])">Bm</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) : sendNotes(['Do', 'Mi', 'Sol'])">C</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Do', 'Mib', 'Sol'])">Cm</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Ré', 'Fa#', 'La'])">D</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Ré', 'Fa', 'La'])">Dm</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Mi', 'Sol#', 'Si'])">E</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Mi', 'Sol', 'Si'])">Em</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Fa', 'La', 'Do'])">F</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Fa', 'Sol#', 'Do'])">Fm</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Sol', 'Si', 'Ré'])">G</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Sol', 'Sib', 'Ré'])">Gm</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['La', 'Do#', 'Mi'])">A</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['La', 'Do', 'Mi'])">Am</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Si', 'Ré#', 'Fa#'])">B</AccordItem>
+      <AccordItem @click="$event.reset ?  sendNotes([]) :sendNotes( ['Si', 'Ré', 'Fa#'])">Bm</AccordItem>
   </div>
 
 </template>
+<script>
+
+
+</script>
 
 <style scoped>
 .container {
