@@ -7,6 +7,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   base: '/tablature_accordeon/',
+  build: {
+    outDir: 'docs', // Remplace par le chemin souhaité
+  },
   plugins: [
     vue(),
     vueDevTools(),
